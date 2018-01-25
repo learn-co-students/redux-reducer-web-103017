@@ -6,7 +6,7 @@ switch(action.type) {
     return {friends: [...state.friends, action.friend]}
   case 'REMOVE_FRIEND':
     const friends = state.friends.filter(friend => friend.id !== action.id)
-    return Object.assign({}, state, {friends: friends})
+    return {...state, friends}
   default:
     return state
 
